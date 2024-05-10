@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnObstacle(float x = 5f)
     {
-        Vector3 spawnPosition = new Vector3(x, Random.Range(-3f, 4f), 0f);
+        Vector3 spawnPosition = new Vector3(x, Random.Range(-2.8f, 4f), 0f);
         Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
     }
 
