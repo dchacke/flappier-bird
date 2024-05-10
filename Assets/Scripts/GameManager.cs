@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool ongoing = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public static void GameOver()
     {
+        ongoing = false;
         Debug.Log("Game over!");
     }
 }
