@@ -17,6 +17,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Jump();
+    }
+
+    private void Jump()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && GameManager.ongoing)
         {
             rb.velocity = Vector2.up * jumpForce;
