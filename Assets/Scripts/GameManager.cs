@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollideWithPlayer : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,11 +16,8 @@ public class CollideWithPlayer : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public static void GameOver()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            GameManager.GameOver();
-        }
+        Debug.Log("Game over!");
     }
 }
