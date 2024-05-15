@@ -10,16 +10,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int offset = 0;
-
-        for (int i = 0; i < 10; i++)
-        {
-            offset = (i + 1) * 5;
-
-            SpawnObstacle(offset);
-        }
-
-        StartCoroutine(SpawnObstacles(offset + 3));
+        StartCoroutine("SpawnObstacles");
     }
 
     // Update is called once per frame
@@ -34,19 +25,19 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game over!");
     }
 
-    private void SpawnObstacle(float x = 5f)
+    private void SpawnObstacle()
     {
-        Vector3 spawnPosition = new Vector3(x, Random.Range(-2.8f, 4f), 0f);
+        Vector3 spawnPosition = new Vector3(10f, Random.Range(-2.8f, 4f), 0f);
         Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
     }
 
-    private IEnumerator SpawnObstacles(float offset)
+    private IEnumerator SpawnObstacles()
     {
         while (ongoing)
         {
-            SpawnObstacle(offset);
+            SpawnObstacle();
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.5f);
         }
     }
 }
