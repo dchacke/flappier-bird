@@ -1,11 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static bool ongoing = true;
     public GameObject obstaclePrefab;
+    public TMP_Text scoreText;
+    private int score = 0;
+    public int Score
+    {
+        get { return score; }
+        set
+        {
+            score++;
+            scoreText.text = "Score: " + score;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
